@@ -6,6 +6,7 @@
   
 
   - name: install updates (Ubuntu)
+    tags: always,update
     apt:
       upgrade: dist
       update_cache: yes
@@ -13,6 +14,7 @@
 
 
   - name: install tmux vim qemu-guest-agent zsh
+    tags: always,update
     package:
       name: 
         - tmux
@@ -24,13 +26,11 @@
 
 
   - name: Change user shell to zsh 
+    tags: zsh,chsh
     ansible.builtin.user:
       name: "{{ ansible_user_id }}"
       shell: /bin/zsh
 
 
-  - name: Install Zsh grml
-    ansible.builtin.git:
-      repo: https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
-      dest: ~/.zsh
-      depth: 1
+
+
