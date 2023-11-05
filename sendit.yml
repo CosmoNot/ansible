@@ -25,12 +25,6 @@
     when: ansible_distribution == "Ubuntu"
 
 
- - name: change user shell to zsh 
-    user:
-      name: "{{ ansible_user_id }}"  
-      shell: /bin/zsh
-
-
 - hosts: test
   become: true
   tasks:
@@ -76,16 +70,3 @@
       mode: 0644
   
 
-- hosts: test
-  gather_facts: false
-  become: yes
-  vars:
-    users:
-      - blah: blubb
-        username: chris
-      - blubb: bleh
-        username: root
-  tasks:
-  - name: set shell
-    include_tasks: set_shell.yml
-    loop: "{{ users }}"
