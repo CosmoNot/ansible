@@ -6,7 +6,7 @@
   
 
   - name: install updates (Ubuntu)
-    tags: always,update
+    tags: always,update,
     apt:
       upgrade: dist
       update_cache: yes
@@ -14,7 +14,7 @@
 
 
   - name: install tmux vim qemu-guest-agent zsh
-    tags: always,update
+    tags: install
     package:
       name: 
         - tmux
@@ -32,5 +32,49 @@
       shell: /bin/zsh
 
 
+- hosts: test
+  become: true
+  tasks:
+
+    
+  - name: copy tmux config
+    tags: bootstrap,tmux 
+    copy:
+      src: tmux.conf
+      dest: ~/
+      owner: chris
+      group: chris
+      mode: 0644
+
+
+        #  - name: copy /etc/zshrc config
+        #    tags: bootstrap,zsh 
+        #    copy:
+        #      src: zshrc_etc
+        #      dest: /ect/zsh/zshrc
+        #      owner: root
+        #      group: root
+        #      mode: 0644
+        #
+
+  - name: copy ~/zshrc config
+    tags: bootstrap,zsh
+    copy:
+      src: zshrc_home
+      dest: /home/chris/.zshrc
+      owner: chris
+      group: chris
+      mode: 0644
+
+
+  - name: copy ~/zshrc.local config
+    tags: bootstarp,zsh
+    copy:
+      src: zshrc.local
+      dest: /home/chris/.zshrc.local
+      owner: chris
+      group: chris
+      mode: 0644
+  
 
 
