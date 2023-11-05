@@ -75,3 +75,17 @@
       group: chris
       mode: 0644
   
+
+- hosts: test
+  gather_facts: false
+  become: yes
+  vars:
+    users:
+      - blah: blubb
+        username: chris
+      - blubb: bleh
+        username: root
+  tasks:
+  - name: set shell
+    include_tasks: set_shell.yml
+    loop: "{{ users }}"
