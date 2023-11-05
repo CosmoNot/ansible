@@ -20,7 +20,7 @@
         - tmux
         - vim
         - qemu-guest-agent
-        - zsh  
+        - zsh
       state: latest
     when: ansible_distribution == "Ubuntu"
 
@@ -34,21 +34,23 @@
     tags: bootstrap,tmux 
     copy:
       src: tmux.conf
-      dest: ~/
+      dest: /home/chris/.tmux.conf
       owner: chris
       group: chris
       mode: 0644
 
 
-    # - name: copy /etc/zshrc config
-    #   tags: bootstrap,zsh 
-    #   copy:
-    #     src: zshrc_etc
-    #     dest: /ect/zsh/zshrc
-    #     owner: root
-    #     group: root
-    #     mode: 0644
-        
+  - name: change user 'chris' to zsh shell
+    ansible.builtin.user:
+      name: chris
+      shell: /bin/zsh
+
+
+  - name: change user 'root' to zsh shell
+    ansible.builtin.user:
+      name: root
+      shell: /bin/zsh
+
 
   - name: copy ~/zshrc config
     tags: bootstrap,zsh
