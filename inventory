@@ -1,5 +1,8 @@
-[generic]
+[test]
 test-101.home.io
+test-103.home.io
+
+[servers]
 unifi.home.io
 
 [nextcloud]
