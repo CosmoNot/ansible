@@ -1,4 +1,7 @@
+[generic]
 test-101.home.io
-test-102.home.io
 unifi.home.io
+
+[nextcloud]
+test-102.home.io
 
