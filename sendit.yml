@@ -25,10 +25,9 @@
     when: ansible_distribution == "Ubuntu"
 
 
-  - name: Change user shell to zsh 
-    tags: zsh,chsh
-    ansible.builtin.user:
-      name: "{{ ansible_user_id }}"
+ - name: change user shell to zsh 
+    user:
+      name: "{{ ansible_user_id }}"  
       shell: /bin/zsh
 
 
