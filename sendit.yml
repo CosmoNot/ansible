@@ -47,15 +47,15 @@
       mode: 0644
 
 
-        #  - name: copy /etc/zshrc config
-        #    tags: bootstrap,zsh 
-        #    copy:
-        #      src: zshrc_etc
-        #      dest: /ect/zsh/zshrc
-        #      owner: root
-        #      group: root
-        #      mode: 0644
-        #
+    # - name: copy /etc/zshrc config
+    #   tags: bootstrap,zsh 
+    #   copy:
+    #     src: zshrc_etc
+    #     dest: /ect/zsh/zshrc
+    #     owner: root
+    #     group: root
+    #     mode: 0644
+        
 
   - name: copy ~/zshrc config
     tags: bootstrap,zsh
@@ -78,3 +78,4 @@
   
 
 
+test
