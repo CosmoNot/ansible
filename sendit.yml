@@ -41,12 +41,14 @@
 
 
   - name: change user 'chris' to zsh shell
+    tags: bootstrap,zsh
     ansible.builtin.user:
       name: chris
       shell: /bin/zsh
 
 
   - name: change user 'root' to zsh shell
+    tags: bootstrap,zsh
     ansible.builtin.user:
       name: root
       shell: /bin/zsh
