@@ -3,7 +3,6 @@
 - hosts: all
   become: true
   tasks:
-  
 
   - name: install updates (Ubuntu)
     tags: always,update,
@@ -11,7 +10,6 @@
       upgrade: dist
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
-
 
   - name: install tmux vim qemu-guest-agent zsh
     tags: install
@@ -28,7 +26,6 @@
 - hosts: all
   become: true
   tasks:
-
     
   - name: copy tmux config
     tags: bootstrap,tmux 
@@ -39,20 +36,17 @@
       group: chris
       mode: 0644
 
-
   - name: change user 'chris' to zsh shell
     tags: bootstrap,zsh
     ansible.builtin.user:
       name: chris
       shell: /bin/zsh
 
-
   - name: change user 'root' to zsh shell
     tags: bootstrap,zsh
     ansible.builtin.user:
       name: root
       shell: /bin/zsh
-
 
   - name: copy ~/zshrc config
     tags: bootstrap,zsh
@@ -62,7 +56,6 @@
       owner: chris
       group: chris
       mode: 0644
-
 
   - name: copy ~/zshrc.local config
     tags: bootstarp,zsh
@@ -74,3 +67,51 @@
       mode: 0644
   
 
+- hosts: nextcloud
+  become: true
+  tasks:
+
+    - name: Install required system packages
+      tags: docker
+      apt:
+        pkg:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+        state: latest
+        update_cache: true
+
+    - name: Add Docker GPG apt Key
+      tags: docker
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      tags: docker
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      tags: docker
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+
+    - name: Install Docker Module for Python
+      tags: docker
+      pip:
+        name: docker
+
+    - name: Add the user 'james' with a bash shell, appending the group 'admins' and 'developers' to the user's groups
+      tags: docker
+      ansible.builtin.user:
+        name: chris
+        groups: docker
+        append: yes
