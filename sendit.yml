@@ -19,6 +19,7 @@
         - vim
         - qemu-guest-agent
         - zsh
+        - iputils-ping
       state: latest
     when: ansible_distribution == "Ubuntu"
 
@@ -55,6 +56,15 @@
       dest: /home/chris/.zshrc
       owner: chris
       group: chris
+      mode: 0644
+
+  - name: copy ~/zshrc config root
+    tags: bootstrap,zsh
+    copy:
+      src: zshrc_home
+      dest: /root/.zshrc
+      owner: root
+      group: root
       mode: 0644
 
   - name: copy ~/zshrc.local config
