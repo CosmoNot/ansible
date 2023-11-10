@@ -20,6 +20,7 @@
         - qemu-guest-agent
         - zsh
         - iputils-ping
+        - htop
       state: latest
     when: ansible_distribution == "Ubuntu"
 

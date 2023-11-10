@@ -1,6 +1,7 @@
 [test]
 test-101.home.io
 test-102.home.io
+192.168.10.129
 
 [servers]
 unifi.home.io
