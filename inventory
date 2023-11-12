@@ -3,9 +3,9 @@ test-ansible.home.io
 test-101.home.io
 test-102.home.io
 
-# [utility_servers]
-# unifi.home.io
-# ansible.home.io
+[utility_servers]
+unifi.home.io
+ansible.home.io
 
-# [web_servers]
-# nextcloud.home.io
+[docker_servers]
+nextcloud.home.io

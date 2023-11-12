@@ -3,11 +3,6 @@
     user: simone
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEs/MSCpigE7iFkLu8etRUAFKwB4Db1bXVEGT5NKwUHE ansible_key"
 
-- name: add ssh key for simone
-  authorized_key:
-    user: simone
-    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEs/MSCpigE7iFkLu8etRUAFKwB4Db1bXVEGT5NKwUHE ansible_key"
-
 - name: install tmux vim qemu-guest-agent zsh
   package:
     name: 

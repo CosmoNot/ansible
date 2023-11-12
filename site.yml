@@ -16,12 +16,7 @@
   roles:
     - base
 
-# - hosts: web_servers
-#   become: true
-#   roles:
-#     - web_servers
-
-# - hosts: utility_servers
-#   become: true
-#   roles:
-#     - utility_servers
+- hosts: docker_servers
+  become: true
+  roles:
+    - docker_servers
