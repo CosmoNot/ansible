@@ -11,6 +11,11 @@
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
 
+
+- hosts: all
+  become: true
+  tasks:
+
   - name: install tmux vim qemu-guest-agent zsh
     tags: install
     package:
@@ -21,14 +26,10 @@
         - zsh
         - iputils-ping
         - htop
+        - neovim
       state: latest
     when: ansible_distribution == "Ubuntu"
 
-
-- hosts: all
-  become: true
-  tasks:
-    
   - name: copy tmux config
     tags: bootstrap,tmux 
     copy:
@@ -76,7 +77,25 @@
       owner: chris
       group: chris
       mode: 0644
-  
+
+  - name: create neovim config dir
+    tags: neovim
+    ansible.builtin.file:
+      path: /home/chris/.config/nvim
+      state: directory
+      owner: chris
+      group: chris
+      mode: 0700
+
+  - name: copy neovim config
+    tags: neovim
+    copy:
+      src: init.vim
+      dest: /home/chris/.config/nvim/init.vim
+      owner: chris
+      group: chris
+      mode: 0644
+
 
 - hosts: nextcloud
   become: true
@@ -120,9 +139,10 @@
       pip:
         name: docker
 
-    - name: Add the user 'james' with a bash shell, appending the group 'admins' and 'developers' to the user's groups
+    - name: Append the user 'chris' with the group 'admins' and 'developers'
       tags: docker
       ansible.builtin.user:
         name: chris
         groups: docker
         append: yes
+

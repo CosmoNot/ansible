@@ -1,11 +1,11 @@
 [test]
-test-101.home.io
-test-102.home.io
-192.168.10.129
+test-ansible.home.io
 
 [servers]
 unifi.home.io
 ansible.home.io
+test-101.home.io
+test-102.home.io
 
 [nextcloud]
 nextcloud.home.io
