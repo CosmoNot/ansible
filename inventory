@@ -1,11 +1,11 @@
 [test]
 test-ansible.home.io
-
-[servers]
-unifi.home.io
-ansible.home.io
 test-101.home.io
 test-102.home.io
 
-[nextcloud]
-nextcloud.home.io
+# [utility_servers]
+# unifi.home.io
+# ansible.home.io
+
+# [web_servers]
+# nextcloud.home.io

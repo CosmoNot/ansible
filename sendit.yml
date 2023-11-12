@@ -4,17 +4,21 @@
   become: true
   tasks:
 
-  - name: install updates (Ubuntu)
-    tags: always,update,
+  - name: update repository index (Ubuntu)
+    tags: always
     apt:
-      upgrade: dist
       update_cache: yes
+    changed_when: false
     when: ansible_distribution == "Ubuntu"
-
 
 - hosts: all
   become: true
   tasks:
+
+  - name: add ssh key for simone
+    authorized_key:
+      user: simone
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEs/MSCpigE7iFkLu8etRUAFKwB4Db1bXVEGT5NKwUHE ansible_key"
 
   - name: install tmux vim qemu-guest-agent zsh
     tags: install
