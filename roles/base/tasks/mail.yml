@@ -1,9 +1,9 @@
-- name: add ssh key for simone
+- name: Add ssh key for simone
   authorized_key:
     user: simone
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEs/MSCpigE7iFkLu8etRUAFKwB4Db1bXVEGT5NKwUHE ansible_key"
 
-- name: install tmux vim qemu-guest-agent zsh
+- name: Install tmux vim qemu-guest-agent zsh
   package:
     name: 
       - tmux
@@ -16,7 +16,7 @@
     state: latest
   when: ansible_distribution == "Ubuntu"
 
-- name: copy tmux config
+- name: Copy tmux config
   copy:
     src: tmux.conf
     dest: /home/chris/.tmux.conf
@@ -24,19 +24,19 @@
     group: chris
     mode: 0644
 
-- name: change user 'chris' to zsh shell
+- name: Change user 'chris' to zsh shell
   tags: bootstrap,zsh
   ansible.builtin.user:
     name: chris
     shell: /bin/zsh
 
-- name: change user 'root' to zsh shell
+- name: Change user 'root' to zsh shell
   tags: bootstrap,zsh
   ansible.builtin.user:
     name: root
     shell: /bin/zsh
 
-- name: copy ~/zshrc config
+- name: Copy ~/zshrc config
   tags: bootstrap,zsh
   copy:
     src: zshrc_home
@@ -45,7 +45,7 @@
     group: chris
     mode: 0644
 
-- name: copy ~/zshrc config root
+- name: Copy ~/zshrc config root
   tags: bootstrap,zsh
   copy:
     src: zshrc_home
@@ -54,7 +54,7 @@
     group: root
     mode: 0644
 
-- name: copy ~/zshrc.local config
+- name: Copy ~/zshrc.local config
   tags: bootstarp,zsh
   copy:
     src: zshrc.local
@@ -63,7 +63,7 @@
     group: chris
     mode: 0644
 
-- name: create neovim config dir
+- name: Create neovim config dir
   tags: bootstrap,neovim
   ansible.builtin.file:
     path: /home/chris/.config/nvim
@@ -72,7 +72,7 @@
     group: chris
     mode: 0700
 
-- name: copy neovim config
+- name: Copy neovim config
   tags: bootstrap,neovim
   copy:
     src: init.vim
