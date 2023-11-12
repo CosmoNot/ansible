@@ -79,7 +79,7 @@
       mode: 0644
 
   - name: create neovim config dir
-    tags: neovim
+    tags: bootstrap,neovim
     ansible.builtin.file:
       path: /home/chris/.config/nvim
       state: directory
@@ -88,7 +88,7 @@
       mode: 0700
 
   - name: copy neovim config
-    tags: neovim
+    tags: bootstrap,neovim
     copy:
       src: init.vim
       dest: /home/chris/.config/nvim/init.vim
