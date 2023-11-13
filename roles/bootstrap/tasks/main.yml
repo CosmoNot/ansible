@@ -1,0 +1,30 @@
+- name: create simone user
+  user:
+    name: simone
+    groups: root
+
+- name: add ssh key for simone
+  authorized_key:
+    user: simone
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEs/MSCpigE7iFkLu8etRUAFKwB4Db1bXVEGT5NKwUHE ansible_key"
+  
+- name: Add sudoers file for simone
+  copy:
+    src: sudoer_nopasswd
+    dest: /etc/sudoers.d/simone
+    owner: root
+    group: root
+    mode: 0440
+
+- name: Delete 90-cloud-init-users
+  ansible.builtin.file:
+    path: /etc/sudoers.d/90-cloud-init-users
+    state: absent
+
+- name: Add sudoers file for chris
+  copy:
+    src: sudoer_passwd_req
+    dest: /etc/sudoers.d/chris
+    owner: root
+    group: root
+    mode: 0440
