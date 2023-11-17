@@ -8,7 +8,7 @@
     name: 
       - "{{ tmux }}"
       - "{{ vim }}"
-      - "{{ qemu-guest-agent }}"
+      # - "{{ qemu-guest-agent }}"
       - "{{ zsh }}"
       - "{{ htop }}"
       - "{{ neovim }}"

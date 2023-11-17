@@ -6,6 +6,7 @@ test-102.home.io
 [utility_servers]
 unifi.home.io
 ansible.home.io
+rpi.home.io
 
 [docker_servers]
 nextcloud.home.io
