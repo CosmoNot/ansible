@@ -6,14 +6,15 @@
 - name: Install tmux vim qemu-guest-agent zsh
   package:
     name: 
-      - "tmux"
-      - "vim"
-      - "qemu-guest-agent"
-      - "zsh"
-      - "htop"
-      - "neovim"
+      - "{{ tmux }}"
+      - "{{ vim }}"
+      - "{{ qemu-guest-agent }}"
+      - "{{ zsh }}"
+      - "{{ htop }}"
+      - "{{ neovim }}"
     state: latest
   when: ansible_distribution == "Ubuntu"
+  when: ansible_distribution == "Debian"
 
 - name: Copy tmux config
   copy:
