@@ -4,12 +4,13 @@
   become: true
   pre_tasks:
 
-  - name: update repository index (Ubuntu)
+  - name: update repository index (apt)
     tags: always
     apt:
       update_cache: yes
     changed_when: false
-    when: ansible_distribution == "Ubuntu"
+      #I don't think this is needed for all apt distros inlcuding debian
+      #    when: ansible_distribution == "Ubuntu"
 
 - hosts: all
   become: true
