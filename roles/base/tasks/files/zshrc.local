@@ -1,1 +1,2 @@
 alias pls='sudo'
+alias ta='tmux a'
