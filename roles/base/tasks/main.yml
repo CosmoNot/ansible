@@ -7,14 +7,14 @@
   package:
     name: 
       - "{{ tmux }}"
-      - "{{ vim }}"
-      - "{{ qemu-guest-agent }}"
+      - "{{ vim_pkg }}"
+      - "{{ qemu_guest_agent }}"
       - "{{ zsh }}"
       - "{{ htop }}"
       - "{{ neovim }}"
       - "{{ python3 }}"
     state: latest
-  when: ansible_distribution == "Ubuntu"
+#    when: ansible_distribution == "Ubuntu"
 
 - name: Copy tmux config
   copy:

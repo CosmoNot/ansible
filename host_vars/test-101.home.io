@@ -1,6 +1,6 @@
 tmux: tmux
-vim: vim
-qemu-guest-agent: qemu-guest-agent
+vim_pkg: vim
+qemu_guest_agent: qemu-guest-agent
 zsh: zsh
 htop: htop
 neovim: neovim
