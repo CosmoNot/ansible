@@ -9,8 +9,7 @@
     apt:
       update_cache: yes
     changed_when: false
-      #I don't think this is needed for all apt distros inlcuding debian
-      #    when: ansible_distribution == "Ubuntu"
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
 - hosts: all
   become: true
