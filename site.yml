@@ -11,6 +11,12 @@
     changed_when: false
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
+  - name: update repository index (Ubuntu)
+    tags: always
+    apt:
+      upgrade: yes
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+
 - hosts: all
   become: true
   roles:
