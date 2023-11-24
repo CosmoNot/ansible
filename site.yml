@@ -14,7 +14,7 @@
   - name: update repository index (Ubuntu)
     tags: always
     apt:
-      upgrade: yes
+      upgrade: "yes"
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
 - hosts: all
