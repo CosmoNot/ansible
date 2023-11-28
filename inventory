@@ -6,7 +6,12 @@ test-102.home.io
 [utility_servers]
 unifi.home.io
 ansible.home.io
+
+[rpi_hosts]
 rpi.home.io
+
+[rpi_hosts:vars]
+ansible_python_interpreter=/usr/bin/python3
 
 [docker_servers]
 nextcloud.home.io
