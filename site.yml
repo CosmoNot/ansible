@@ -11,7 +11,7 @@
     changed_when: false
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
-  - name: update repository index (Ubuntu)
+  - name: upgrade repository index (apt)
     tags: always
     apt:
       upgrade: "yes"
