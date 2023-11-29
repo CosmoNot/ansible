@@ -18,11 +18,13 @@
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
 - hosts: all
+  tags: base
   become: true
   roles:
     - base
 
 - hosts: docker_servers
+  tags: docker
   become: true
   roles:
     - docker_servers
