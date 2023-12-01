@@ -1,7 +1,10 @@
 ---
 
-- hosts: all
+- hosts: bootstrap
   become: true
+  vars:
+    ansible_user: chris
+
   pre_tasks:
  
   - name: install updates (Ubuntu)
@@ -18,7 +21,5 @@
       update_cache: yes
     when: ansible_distribution == "Debian"
 
-- hosts: all
-  become: true
   roles:
     - bootstrap

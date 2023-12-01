@@ -1,5 +1,6 @@
+[bootstrap]
+
 [test]
-test-ansible.home.io
 test-101.home.io
 test-102.home.io
 
@@ -15,3 +16,4 @@ ansible_python_interpreter=/usr/bin/python3
 
 [docker_servers]
 nextcloud.home.io
+wireguard.home.io
