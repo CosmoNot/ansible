@@ -1,8 +1,9 @@
 [bootstrap]
+#nextcloud.home.io
+#test-101.home.io
+#test-102.home.io
 
 [test]
-test-101.home.io
-test-102.home.io
 
 [utility_servers]
 unifi.home.io
@@ -15,5 +16,4 @@ rpi.home.io
 ansible_python_interpreter=/usr/bin/python3
 
 [docker_servers]
-nextcloud.home.io
 wireguard.home.io
