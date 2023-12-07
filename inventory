@@ -1,13 +1,13 @@
 [bootstrap]
-#test-101.home.io
+test-101.home.io
 #test-102.home.io
-bastion.home.io
 
 [test]
 
 [utility_servers]
 unifi.home.io
 ansible.home.io
+bastion.home.io
 
 [rpi_hosts]
 rpi.home.io
