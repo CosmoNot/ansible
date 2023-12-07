@@ -28,3 +28,9 @@
   become: true
   roles:
     - docker_servers
+
+- hosts: swap_servers
+  tags: test
+  become: true
+  roles:
+    - swapfile
