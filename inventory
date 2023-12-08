@@ -1,22 +1,18 @@
 [bootstrap]
-#test-101.home.io
 
 [test]
-test-101.home.io
+test-101.chome.io
 
 [utility_servers]
-unifi.home.io
-ansible.home.io
-bastion.home.io
+unifi.chome.io
+ansible.chome.io
+bastion.chome.io
 
 [rpi_hosts]
-rpi.home.io
-
-#[rpi_hosts:vars]
-#ansible_python_interpreter=/usr/bin/python3
+rpi.chome.io
 
 [docker_servers]
-nextcloud.home.io
+nextcloud.chome.io
 
 [swap_servers]
-nextcloud.home.io
+nextcloud.chome.io
