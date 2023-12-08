@@ -33,6 +33,7 @@
 - name: turn on swap
   become: yes
   command: swapon -a
+  when: not swap_file_check.stat.exists
 
 - name: set swapiness
   become: yes

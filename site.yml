@@ -28,6 +28,7 @@
   become: true
   roles:
     - docker_servers
+    - docker_portainer
 
 - hosts: swap_servers
   tags: test
