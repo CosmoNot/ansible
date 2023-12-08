@@ -10,8 +10,16 @@
   
 - name: Add sudoers file for simone
   copy:
-    src: sudoer_nopasswd
+    src: sudoer_simone
     dest: /etc/sudoers.d/simone
+    owner: root
+    group: root
+    mode: 0440
+
+- name: Add sudoers file for chris
+  copy:
+    src: sudoer_chris
+    dest: /etc/sudoers.d/chris
     owner: root
     group: root
     mode: 0440
@@ -20,11 +28,3 @@
   ansible.builtin.file:
     path: /etc/sudoers.d/90-cloud-init-users
     state: absent
-
-- name: Add sudoers file for chris
-  copy:
-    src: sudoer_passwd_req
-    dest: /etc/sudoers.d/chris
-    owner: root
-    group: root
-    mode: 0440
