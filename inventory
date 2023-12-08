@@ -17,7 +17,7 @@ ansible_python_interpreter=/usr/bin/python3
 
 [docker_servers]
 nextcloud.home.io
-#wireguard.home.io
+wireguard.home.io
 
 [swap_servers]
 nextcloud.home.io

@@ -31,7 +31,7 @@
     - docker_portainer
 
 - hosts: swap_servers
-  tags: test
+  tags: swap
   become: true
   roles:
     - swapfile
