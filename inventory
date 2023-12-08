@@ -17,7 +17,6 @@ rpi.home.io
 
 [docker_servers]
 nextcloud.home.io
-wireguard.home.io
 
 [swap_servers]
 nextcloud.home.io
