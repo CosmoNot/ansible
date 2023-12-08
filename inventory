@@ -12,8 +12,8 @@ bastion.home.io
 [rpi_hosts]
 rpi.home.io
 
-[rpi_hosts:vars]
-ansible_python_interpreter=/usr/bin/python3
+#[rpi_hosts:vars]
+#ansible_python_interpreter=/usr/bin/python3
 
 [docker_servers]
 nextcloud.home.io
