@@ -13,6 +13,12 @@ rpi.chome.io
 
 [docker_servers]
 nextcloud.chome.io
+docker.chome.io
+test-101.chome.io
 
 [swap_servers]
 nextcloud.chome.io
+test-101.chome.io
+
+[portainer_servers]
+test-101.chome.io
