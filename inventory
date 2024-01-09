@@ -1,24 +1,25 @@
 [bootstrap]
+docker.home
 
 [test]
-test-101.chome.io
+test-101.home
 
 [utility_servers]
-unifi.chome.io
-ansible.chome.io
-bastion.chome.io
+unifi.home
+ansible.home
 
 [rpi_hosts]
-rpi.chome.io
+rpi.home
 
 [docker_servers]
-nextcloud.chome.io
-docker.chome.io
-test-101.chome.io
+nextcloud.home
+docker.home
+test-101.home
 
 [swap_servers]
-nextcloud.chome.io
-test-101.chome.io
+nextcloud.home
+test-101.home
+docker.home
 
 [portainer_servers]
-test-101.chome.io
+test-101.home
