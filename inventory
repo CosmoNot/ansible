@@ -1,25 +1,25 @@
 [bootstrap]
-docker.home
+docker.home.io
 
 [test]
-test-101.home
+test-101.home.io
 
 [utility_servers]
-unifi.home
-ansible.home
+unifi.home.io
+ansible.home.io
 
 [rpi_hosts]
-rpi.home
+rpi.home.io
 
 [docker_servers]
-nextcloud.home
-docker.home
-test-101.home
+nextcloud.home.io
+docker.home.io
+test-101.home.io
 
 [swap_servers]
-nextcloud.home
-test-101.home
-docker.home
+nextcloud.home.io
+test-101.home.io
+docker.home.io
 
 [portainer_servers]
-test-101.home
+test-101.home.io
