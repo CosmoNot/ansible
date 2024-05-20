@@ -13,12 +13,11 @@ rpi.home.io
 
 [docker_servers]
 nextcloud.home.io
-hblink.home.io
+#hblink.home.io
 #test-101.home.io
 
 [swap_servers]
 nextcloud.home.io
-#test-101.home.io
 hblink.home.io
 
 [portainer_servers]
