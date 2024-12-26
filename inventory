@@ -1,5 +1,5 @@
 [bootstrap]
-homeass.home.io
+assistant.home.io
 
 [test]
 #test-101.home.io
@@ -7,21 +7,20 @@ homeass.home.io
 [utility_servers]
 unifi.home.io
 ansible.home.io
-homeass.home.io
+assistant.home.io
 
 [rpi_hosts]
 rpi.home.io
 
 [docker_servers]
 nextcloud.home.io
-homeass.home.io
 #hblink.home.io
 #test-101.home.io
 
 [swap_servers]
 nextcloud.home.io
-homeass.home.io
 hblink.home.io
+assistant.home.io
 
 [portainer_servers]
-#test-101.home.io
+#carl.home.io
