@@ -1,6 +1,6 @@
 [bootstrap]
 lazlo.home.io
-nextcloud.home.io
+#nextcloud.home.io
 
 [test]
 #test-101.home.io

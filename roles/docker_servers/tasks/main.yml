@@ -31,10 +31,10 @@
     state: latest
     update_cache: true
 
-- name: Install Docker Module for Python
-  tags: docker
-  pip:
-    name: docker
+# - name: Install Docker Module for Python
+#   tags: docker
+#   pip:
+#     name: docker
 
 - name: Append the user 'chris' with the group 'admins' and 'developers'
   tags: docker
