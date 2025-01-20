@@ -6,3 +6,4 @@ htop: htop
 neovim: neovim
 python3: python3
 swap_space: 1G
+ansible_python_interpreter: /usr/bin/python3
