@@ -9,13 +9,13 @@
     apt:
       update_cache: yes
     changed_when: false
-    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+    when: ansible_facts['distribution'] == "Ubuntu" or ansible_facts['distribution'] == "Debian"
 
   - name: upgrade packages (apt)
     tags: always,update
     apt:
       upgrade: "yes"
-    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+    when: ansible_facts['distribution'] == "Ubuntu" or ansible_facts['distribution'] == "Debian"
 
 - hosts: all
   tags: base
