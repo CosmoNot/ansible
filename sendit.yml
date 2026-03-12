@@ -6,30 +6,34 @@
 
   - name: update repository index (Ubuntu)
     tags: always
+    when: ansible_facts['os_family'] == "Ubuntu"
     apt:
       update_cache: yes
     changed_when: false
-    when: ansible_distribution == "Ubuntu"
   
   - name: update repository index (Ubuntu)
     tags: always
+    when: ansible_facts['os_family'] == "Ubuntu"
     apt:
       upgrade: yes
-    when: ansible_distribution == "Ubuntu"
-
+    
 - hosts: all
   become: true
   tasks:
 
   - name: add ssh key for simone
-    authorized_key:
+    ansible.builtin.authorized_key:
       user: simone
       key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEs/MSCpigE7iFkLu8etRUAFKwB4Db1bXVEGT5NKwUHE ansible_key"
+      state: present
 
-  - name: install tmux vim qemu-guest-agent zsh
-    tags: install
-    package:
-      name: 
+
+  - name: Install tmux, vim, qemu-guest-agent, zsh
+    tags:
+      - install
+    when: ansible_facts['os_family'] == "Debian"
+    ansible.builtin.package:
+      name:
         - tmux
         - vim
         - qemu-guest-agent
@@ -37,12 +41,13 @@
         - iputils-ping
         - htop
         - neovim
-      state: latest
-    when: ansible_distribution == "Ubuntu"
+      state: present
 
   - name: copy tmux config
-    tags: bootstrap,tmux 
-    copy:
+    tags: 
+      - bootstrap
+      - tmux
+    ansible.builtin.copy:
       src: tmux.conf
       dest: /home/chris/.tmux.conf
       owner: chris
@@ -62,8 +67,10 @@
       shell: /bin/zsh
 
   - name: copy ~/zshrc config
-    tags: bootstrap,zsh
-    copy:
+    tags: 
+      - bootstrap
+      - zsh
+    ansible.builtin.copy:
       src: zshrc_home
       dest: /home/chris/.zshrc
       owner: chris
@@ -71,8 +78,10 @@
       mode: 0644
 
   - name: copy ~/zshrc config root
-    tags: bootstrap,zsh
-    copy:
+    tags: 
+      - bootstrap
+      - zsh
+    ansible.builtin.copy:
       src: zshrc_home
       dest: /root/.zshrc
       owner: root
@@ -80,8 +89,10 @@
       mode: 0644
 
   - name: copy ~/zshrc.local config
-    tags: bootstarp,zsh
-    copy:
+    tags: 
+      - bootstrap
+      - zsh
+    ansible.builtin.copy:
       src: zshrc.local
       dest: /home/chris/.zshrc.local
       owner: chris
@@ -89,7 +100,9 @@
       mode: 0644
 
   - name: create neovim config dir
-    tags: bootstrap,neovim
+    tags: 
+      - bootstrap
+      - neovim
     ansible.builtin.file:
       path: /home/chris/.config/nvim
       state: directory
@@ -98,8 +111,10 @@
       mode: 0700
 
   - name: copy neovim config
-    tags: bootstrap,neovim
-    copy:
+    tags: 
+      - bootstrap
+      - neovim
+    ansible.builtin.copy:
       src: init.vim
       dest: /home/chris/.config/nvim/init.vim
       owner: chris

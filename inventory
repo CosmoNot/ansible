@@ -1,6 +1,6 @@
 [bootstrap]
-192.168.100.101
-#unifios.home.io
+#192.168.100.101
+unifios.home.io
 #nextcloud.home.io
 
 [test]
@@ -10,6 +10,7 @@
 unifi.home.io
 ansible.home.io
 lazlo.home.io
+unifios.home.io
 #assistant.home.io
 
 [rpi_hosts]
