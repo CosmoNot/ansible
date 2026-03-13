@@ -7,7 +7,6 @@ unifios.home.io
 #test-101.home.io
 
 [utility_servers]
-unifi.home.io
 ansible.home.io
 lazlo.home.io
 unifios.home.io
